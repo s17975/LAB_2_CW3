@@ -12,9 +12,9 @@ namespace ZAD2_WebApplication.Controllers
     public class StudentsController : ControllerBase
     {
         [HttpGet]
-        public string GetStudent()
+        public string GetStudent(string orderBy)
         {
-            return "Rudko, Rudko2";
+            return $"Rudko, Rudko2, Arudko sortowanie={orderBy}";
         }
         [HttpGet("{id}")]
         public IActionResult GetStudent(int id)
