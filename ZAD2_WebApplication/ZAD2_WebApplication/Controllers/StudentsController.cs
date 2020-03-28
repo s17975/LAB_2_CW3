@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ZAD2_WebApplication.DAL;
 using ZAD2_WebApplication.Models;
 
 namespace ZAD2_WebApplication.Controllers
@@ -12,6 +13,16 @@ namespace ZAD2_WebApplication.Controllers
     [Route("api/students")]
     public class StudentsController : ControllerBase
     {
+        private readonly IDbService _dbService;
+        public StudentsController(IDbService dbService)
+        {
+            _dbService = dbService;
+        }
+        [HttpGet]
+        public IActionResult GetStudents(string orderBy)
+        {
+            return Ok(_dbService.GetStudents());
+        }
         [HttpGet]
         public string GetStudent(string orderBy)
         {
