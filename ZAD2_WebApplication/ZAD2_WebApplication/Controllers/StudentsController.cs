@@ -16,5 +16,17 @@ namespace ZAD2_WebApplication.Controllers
         {
             return "Rudko, Rudko2";
         }
+        [HttpGet("{id}")]
+        public IActionResult GetStudent(int id)
+        {
+            if (id == 1)
+            {
+                return Ok("Rudko");
+            } else if (id == 2)
+            {
+                return Ok("Inny Rudko");
+            }
+            return NotFound("Nie znalezniono studenta");
+        }
     }
 }
