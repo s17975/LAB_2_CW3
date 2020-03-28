@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ZAD2_WebApplication.Models;
 
 namespace ZAD2_WebApplication.Controllers
 {
@@ -27,6 +28,22 @@ namespace ZAD2_WebApplication.Controllers
                 return Ok("Inny Rudko");
             }
             return NotFound("Nie znalezniono studenta");
+        }
+        [HttpPost]
+        public IActionResult CreateStudent(Student student)
+        {
+            student.IndexNumber = $"s{new Random().Next(1, 20000)}";
+            return Ok(student);
+        }
+        [HttpPut("{id}")]
+        public IActionResult putStudent(int id)
+        {
+            return Ok("Aktualizacja dokończona");
+        }
+        [HttpDelete("{id}")]
+        public IActionResult deleteStudent(int id)
+        {
+            return Ok("Usuwanie ukończone");
         }
     }
 }
