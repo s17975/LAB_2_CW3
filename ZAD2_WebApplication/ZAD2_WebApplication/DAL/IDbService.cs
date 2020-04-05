@@ -10,5 +10,6 @@ namespace ZAD2_WebApplication.DAL
     {
         IEnumerable<Student> GetStudents();
         IEnumerable<Student> GetStudent(string indexNumber);
+        int DeleteStudent(string indexNumber);
     }
 }

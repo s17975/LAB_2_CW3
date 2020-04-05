@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿
 using Microsoft.AspNetCore.Mvc;
 using ZAD2_WebApplication.DAL;
-using ZAD2_WebApplication.Models;
 
 namespace ZAD2_WebApplication.Controllers
 {
@@ -29,11 +23,19 @@ namespace ZAD2_WebApplication.Controllers
             return Ok(_dbService.GetStudents());
         }
 
-        // POBIERZ STUDENTA PO indexNumber z dbo.Students
+        // POBIERZ STUDENTA PO IndexNumber z dbo.Students
         [HttpGet("{index}")]
         public IActionResult GetStudent(string index)
         {
             return Ok(_dbService.GetStudent(index));
+        }
+
+        //  USUŃ STUDENTA PO IndexNumber z dbo.Students
+        [HttpDelete("{index}")]
+        public IActionResult deleteStudent(string index)
+        {
+            int rowsAff = _dbService.DeleteStudent(index);
+            return Ok("Usuwanie ukończone, usunięto : "+rowsAff.ToString()+" wierszy");
         }
 
         /// --------------------------------------------------------------- ///
@@ -81,7 +83,7 @@ namespace ZAD2_WebApplication.Controllers
             return Ok(student);
         }
         */
-        //  DODAJ STUDENTA po ID
+        //  AKTUALIZUJ STUDENTA po ID
         /*
         [HttpPut("{id}")]
         public IActionResult putStudent(int id)
