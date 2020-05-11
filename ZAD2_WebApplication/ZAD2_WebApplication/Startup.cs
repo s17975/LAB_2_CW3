@@ -29,7 +29,7 @@ namespace ZAD2_WebApplication
         {
             //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             services.AddMvc(option => option.EnableEndpointRouting = false);
-            services.AddSingleton<IDbService, my_dbService>();
+            services.AddSingleton<IStudentsDbService, SqlServerDbService>();
             services.AddControllers();
             
         }

@@ -6,10 +6,12 @@ using ZAD2_WebApplication.Models;
 
 namespace ZAD2_WebApplication.DAL
 {
-    public interface IDbService
+    public interface IStudentsDbService
     {
         IEnumerable<Student> GetStudents();
         IEnumerable<Student> GetStudent(string indexNumber);
         int DeleteStudent(string indexNumber);
+        Response_Enrollment EnrollStudent(Request_EnrollStudent request);
+        void PromoteStudents(int semester, string studies);
     }
 }

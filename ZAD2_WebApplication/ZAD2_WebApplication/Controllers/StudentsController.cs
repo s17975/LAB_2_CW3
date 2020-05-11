@@ -8,10 +8,10 @@ namespace ZAD2_WebApplication.Controllers
     [Route("api/students")]
     public class StudentsController : ControllerBase
     {
-        private readonly IDbService _dbService;
+        private readonly IStudentsDbService _dbService;
 
-        // INICJUJ BAZE DANYCH
-        public StudentsController(IDbService dbService)
+        // INICJUJ DBService
+        public StudentsController(IStudentsDbService dbService)
         {
             _dbService = dbService;
         }
@@ -37,6 +37,14 @@ namespace ZAD2_WebApplication.Controllers
             int rowsAff = _dbService.DeleteStudent(index);
             return Ok("Usuwanie ukończone, usunięto : "+rowsAff.ToString()+" wierszy");
         }
+
+
+
+
+
+
+
+
 
         /// --------------------------------------------------------------- ///
         ///       METODY Z ZAŚLEPKĄ BAZY DANYCH - Ćwiczenia numer 3         ///
