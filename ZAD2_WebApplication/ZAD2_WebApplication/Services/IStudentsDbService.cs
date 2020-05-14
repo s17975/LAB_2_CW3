@@ -12,6 +12,6 @@ namespace ZAD2_WebApplication.DAL
         IEnumerable<Student> GetStudent(string indexNumber);
         int DeleteStudent(string indexNumber);
         Response_Enrollment EnrollStudent(Request_EnrollStudent request);
-        void PromoteStudents(int semester, string studies);
+        Response_Enrollment PromoteStudents(int Semester, string Studies);
     }
 }

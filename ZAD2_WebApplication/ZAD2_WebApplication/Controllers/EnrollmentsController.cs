@@ -29,7 +29,7 @@ namespace ZAD2_WebApplication.Controllers
             
             if(string.IsNullOrEmpty(IndexNumber) || string.IsNullOrEmpty(FirstName) || string.IsNullOrEmpty(LastName) || string.IsNullOrEmpty(BirthDate) || string.IsNullOrEmpty(Studies))
             {
-                Console.WriteLine("cos jest nullem");
+                Console.WriteLine("Parametry żądania mają niepoprawną wartość");
                 return StatusCode(400);
             } else
             {
@@ -56,13 +56,25 @@ namespace ZAD2_WebApplication.Controllers
         // STUDENT LEVEL UP
         [Route("api/enrollments/promotions")]
         [HttpPost]
-        public IActionResult PromoteStudents(int semester, string studies)
+        public IActionResult PromoteStudents(int Semester, string Studies)
         {
-            _dbService.PromoteStudents(semester, studies);
-            var response = semester.ToString()+studies;
-
-            return Ok(response);
+            if (Semester<=0 || Semester > 10 || string.IsNullOrEmpty(Studies))
+            {
+                Console.WriteLine("Parametry żądania mają niepoprawną wartość");
+                return StatusCode(400);
+            } else
+            {
+                try
+                {
+                    Response_Enrollment response = _dbService.PromoteStudents(Semester, Studies);
+                    return Ok(response);
+                } catch (Exception ex)
+                {
+                    Console.WriteLine("Blad przy wywolaniu db.PromoteStudents : " + ex.Message.ToString());
+                    return StatusCode(404);
+                }
+                
+            }
         }
-
     }
 }

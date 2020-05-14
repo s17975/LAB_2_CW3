@@ -8,6 +8,10 @@ namespace ZAD2_WebApplication.Models
 {
     public class Response_Enrollment
     {
-        public int semester { get; set; }
+        public int IdEnrollment { get; set; }
+        public int Semester { get; set; }
+        public int IdStudy { get; set; }
+        public DateTime StartDate { get; set; }
+
     }
 }

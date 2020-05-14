@@ -148,7 +148,7 @@ namespace ZAD2_WebApplication.DAL
                 com.Transaction = transaction;
                 try
                 {
-                    //5. Dodanie enrollment
+                    //5. Dodanie enrollment jeżeli nie istnieje
                     if(!exists_Enrollment)
                     {
                         com.CommandText = "INSERT INTO s17975.dbo.Enrollment VALUES(" + student.IDEnrollment + ", 1 , " + idstudies + ", '" + DateTime.Now.ToString("dd.MM.yyyy") + "');";
@@ -158,21 +158,55 @@ namespace ZAD2_WebApplication.DAL
                     com.CommandText = "INSERT INTO s17975.dbo.Student VALUES('" + student.IndexNumber + "', '" + student.FirstName + "', '" + student.LastName + "', '" + student.BirthDate.ToString("yyyy-MM-dd") + "' , " +student.IDEnrollment+");";
                     com.ExecuteNonQuery();
                     transaction.Commit();
-                    response.semester = 1;
+                    response.Semester = 1;
+                    response.IdEnrollment = student.IDEnrollment;
+                    response.IdStudy = idstudies;
+                    response.StartDate = DateTime.Now;
                 }
                 catch (SqlException exc)
                 {
                     Console.WriteLine("Blad podczas wykonywania polecenia SQL : "+ exc.Message);
                     transaction.Rollback();
-                    response.semester = 0;
+                    response.Semester = 0;
                 }
             }
             return response;
         }
 
-        public void PromoteStudents(int semester, string studies)
+        public Response_Enrollment PromoteStudents(int Semester, string Studies)
         {
-            Console.WriteLine("SEM :" + semester.ToString());
+            Response_Enrollment response = new Response_Enrollment();
+            using (var con = new SqlConnection(ConString))
+            using (var com = con.CreateCommand())
+            {
+                con.Open();
+
+                //1. Czy studia istnieja?
+                com.CommandText = "select s17975.dbo.Enrollment.IdEnrollment,s17975.dbo.Enrollment.Semester, s17975.dbo.Enrollment.IdStudy, s17975.dbo.Enrollment.StartDate  from s17975.dbo.Enrollment LEFT JOIN s17975.dbo.Studies ON s17975.dbo.Studies.IdStudy = s17975.dbo.Enrollment.IdStudy WHERE s17975.dbo.Studies.Name='" + @Studies + "' AND s17975.dbo.Enrollment.Semester="+ @Semester + ";";
+                com.Parameters.AddWithValue("Name", Studies);
+                com.Parameters.AddWithValue("Semester", Semester);
+                using (var dr = com.ExecuteReader())
+                {
+                    if (!dr.Read())
+                    {
+                        throw new Exception("Wybrene studia nie istnieją !");
+                    }
+                }
+                //2. Studenci LevelUp - wywołanie procedury składniowej
+                com.CommandText = "EXEC APBD_PromoteStudents "+ Semester + ", " + Studies;
+                using (var dr = com.ExecuteReader())
+                {
+                    if (!dr.Read())
+                    {
+                        throw new Exception("Procedura składniowa nie zwróciła wyniku");
+                    }
+                    response.IdEnrollment = (int)dr["IdEnrollment"];
+                    response.Semester = (int)dr["Semester"];
+                    response.IdStudy = (int)dr["IdStudy"];
+                    response.StartDate = DateTime.ParseExact(dr["StartDate"].ToString(), "dd.MM.yyyy hh:mm:ss", CultureInfo.InvariantCulture);
+                }
+            }
+            return response;
         }
     }
 }
