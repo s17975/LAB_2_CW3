@@ -11,6 +11,25 @@ namespace ZAD2_WebApplication.DAL
     {
         private const string ConString = "Data Source=db-mssql;Initial Catalog=s17975;Integrated Security=True";
 
+        public string CheckIndexNumberInDB(string Index)
+        {
+            string response = "brak";
+            using (SqlConnection con = new SqlConnection(ConString))
+            using (SqlCommand com = new SqlCommand())
+            {
+                com.Connection = con;
+                com.CommandText = "SELECT s17975.dbo.Student.IndexNumber FROM s17975.dbo.Student WHERE s17975.dbo.Student.IndexNumber='"+@Index+"';";
+                com.Parameters.AddWithValue("IndexNumber", Index);
+                con.Open();
+                SqlDataReader dr = com.ExecuteReader();
+                while (dr.Read())
+                {
+                    response = dr["IndexNumber"].ToString();
+                }
+            }
+            return response;
+    }
+
         public IEnumerable<Student> GetStudents()
         {
             var list = new List<Student>();
@@ -208,5 +227,7 @@ namespace ZAD2_WebApplication.DAL
             }
             return response;
         }
+
+
     }
 }

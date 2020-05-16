@@ -8,6 +8,7 @@ namespace ZAD2_WebApplication.DAL
 {
     public interface IStudentsDbService
     {
+        string CheckIndexNumberInDB(string Index);
         IEnumerable<Student> GetStudents();
         IEnumerable<Student> GetStudent(string indexNumber);
         int DeleteStudent(string indexNumber);
