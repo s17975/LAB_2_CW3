@@ -5,13 +5,9 @@ using System.Threading.Tasks;
 
 namespace ZAD2_WebApplication.Models
 {
-    public class Student
+    public class Response_StudentAuthentication
     {
-        public int IDEnrollment { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
         public string IndexNumber { get; set; }
-        public DateTime BirthDate { get; set; }
         public string Password { get; set; }
         public string Salt { get; set; }
     }

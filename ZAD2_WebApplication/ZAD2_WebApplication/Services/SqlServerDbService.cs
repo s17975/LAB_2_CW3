@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Globalization;
+using System.Linq;
 using ZAD2_WebApplication.Models;
 
 namespace ZAD2_WebApplication.DAL
@@ -11,15 +12,134 @@ namespace ZAD2_WebApplication.DAL
     {
         private const string ConString = "Data Source=db-mssql;Initial Catalog=s17975;Integrated Security=True";
 
-        public string CheckIndexNumberInDB(string Index)
+        public Response_StudentAuthentication AuthenticateStudent(Request_StudentAuthentication request) 
+        {
+            Response_StudentAuthentication response = new Response_StudentAuthentication();
+            IEnumerable<Student> student = GetStudent(request.IndexNumber);
+            if (student == null || student.Count() == 0)
+            {
+                throw new Exception("Brak autoryzacji, podane konto studenta nie istnieje !");
+            }
+            response.IndexNumber = student.FirstOrDefault().IndexNumber;
+            response.Password = student.FirstOrDefault().Password;
+            response.Salt = student.FirstOrDefault().Salt;
+            return response;
+        }
+
+        public Response_AuthorizationRoles GetAuthorization(string IndexNumber) 
+        {
+            Response_AuthorizationRoles response = new Response_AuthorizationRoles();
+
+            var roles_list = new List<string>();
+            string role;
+            using (SqlConnection con = new SqlConnection(ConString))
+            using (SqlCommand com = new SqlCommand())
+            {
+                com.Connection = con;
+                com.CommandText = "SELECT s17975.dbo.Roles.DB_Role from s17975.dbo.Roles WHERE s17975.dbo.Roles.IndexNumber = '"+ IndexNumber + "';";
+                con.Open();
+                SqlDataReader dr = com.ExecuteReader();
+                while (dr.Read())
+                {
+                    role = dr["DB_Role"].ToString();
+                    roles_list.Add(role);
+                }
+            }
+            response.DB_Roles = roles_list;
+            if(response == null || response.DB_Roles.Count() == 0)
+            {
+                throw new Exception("Nie masz uprawnień do wyświetlenia wyniku !");
+            }
+            return response;
+        }
+
+        public string GetRefreshTokenOwner(string token) 
+        {
+            string IndexNumber = "brak";
+            using (SqlConnection con = new SqlConnection(ConString))
+            using (SqlCommand com = new SqlCommand())
+            {
+                com.Connection = con;
+                com.CommandText = "SELECT s17975.dbo.IndexNumber from s17975.dbo.RefreshTokens WHERE s17975.dbo.RefreshTokens.Token = '" + token + "';";
+                con.Open();
+                SqlDataReader dr = com.ExecuteReader();
+                while (dr.Read())
+                {
+                    IndexNumber = dr["IndexNumber"].ToString();
+                }
+            }
+            if (IndexNumber == null || IndexNumber == "brak")
+            {
+                throw new Exception("Token nie zarejestrowany w bazie danych !");
+            }
+            return IndexNumber;
+        }
+
+        public void SetRefreshToken(Guid token, string indexNumber)
+        {
+            string OldToken = "brak";
+            using (var con = new SqlConnection(ConString))
+            using (var com = con.CreateCommand())
+            {
+                con.Open();
+                com.CommandText = "SELECT s17975.dbo.RefreshTokens.Token from s17975.dbo.RefreshTokens WHERE s17975.dbo.RefreshTokens.IndexNumber = '" + indexNumber + "';";
+
+                using (var dr = com.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        OldToken = dr["Token"].ToString();
+                    }
+                }
+                    if (OldToken == null || OldToken == "brak")
+                    {
+                    SqlTransaction transaction;
+                    transaction = con.BeginTransaction("INSERT");
+                    com.Connection = con;
+                    com.Transaction = transaction;
+                    try
+                    {
+                        // Dodanie refreshToken dla unikatowego numeru studenta/pracownika (przy założeniu że każdy pracownik ma swój 'numer indexu')
+                        com.CommandText = "INSERT INTO s17975.dbo.RefreshTokens VALUES('" + indexNumber + "','"+ token.ToString() + "');";
+                        com.ExecuteNonQuery();
+                        transaction.Commit();
+                    }
+                    catch (SqlException exc)
+                    {
+                        Console.WriteLine("Blad podczas wykonywania polecenia SQL : " + exc.Message);
+                        transaction.Rollback();
+                    }
+                } else
+                {
+                    SqlTransaction transaction;
+                    transaction = con.BeginTransaction("UPDATE");
+                    com.Connection = con;
+                    com.Transaction = transaction;
+                    try
+                    {
+                        // Update refreshToken dla unikatowego numeru studenta/pracownika (przy założeniu że każdy pracownik ma swój 'numer indexu')
+                        com.CommandText = "UPDATE s17975.dbo.RefreshTokens SET s17975.dbo.RefreshTokens.Token='" + token.ToString() + "' WHERE s17975.dbo.RefreshTokens.IndexNumber='"+indexNumber+"';";
+                        com.ExecuteNonQuery();
+                        transaction.Commit();
+                    }
+                    catch (SqlException exc)
+                    {
+                        Console.WriteLine("Blad podczas wykonywania polecenia SQL : " + exc.Message);
+                        transaction.Rollback();
+                    }
+                }
+            }
+        }
+
+        public string CheckIndexNumberInDB(string IndexNumber)
         {
             string response = "brak";
             using (SqlConnection con = new SqlConnection(ConString))
             using (SqlCommand com = new SqlCommand())
             {
                 com.Connection = con;
-                com.CommandText = "SELECT s17975.dbo.Student.IndexNumber FROM s17975.dbo.Student WHERE s17975.dbo.Student.IndexNumber='"+@Index+"';";
-                com.Parameters.AddWithValue("IndexNumber", Index);
+                com.CommandText = "SELECT s17975.dbo.Student.IndexNumber FROM s17975.dbo.Student WHERE s17975.dbo.Student.IndexNumber='"+ @IndexNumber + "';";
+                com.Parameters.AddWithValue("IndexNumber", IndexNumber);
                 con.Open();
                 SqlDataReader dr = com.ExecuteReader();
                 while (dr.Read())
@@ -54,15 +174,15 @@ namespace ZAD2_WebApplication.DAL
             return list;
         }
 
-        public IEnumerable<Student> GetStudent(string index)
+        public IEnumerable<Student> GetStudent(string IndexNumber)
         {
             var list = new List<Student>();
             using (SqlConnection con = new SqlConnection(ConString))
             using (SqlCommand com = new SqlCommand())
             {
                 com.Connection = con;
-                com.CommandText = "select IndexNumber, FirstName, LastName, BirthDate, Studies.Name, Semester, StartDate, Enrollment.IdEnrollment from s17975.dbo.Student LEFT JOIN s17975.dbo.Enrollment ON s17975.dbo.Student.IdEnrollment = s17975.dbo.Enrollment.IdEnrollment LEFT JOIN s17975.dbo.Studies ON s17975.dbo.Enrollment.IdStudy = s17975.dbo.Studies.IdStudy WHERE IndexNumber='" + @index + "';";
-                com.Parameters.AddWithValue("IndexNumber", index);
+                com.CommandText = "select IndexNumber, FirstName, LastName, BirthDate, Password, Salt, Studies.Name, Semester, StartDate, Enrollment.IdEnrollment from s17975.dbo.Student LEFT JOIN s17975.dbo.Enrollment ON s17975.dbo.Student.IdEnrollment = s17975.dbo.Enrollment.IdEnrollment LEFT JOIN s17975.dbo.Studies ON s17975.dbo.Enrollment.IdStudy = s17975.dbo.Studies.IdStudy WHERE IndexNumber='" + @IndexNumber + "';";
+                com.Parameters.AddWithValue("IndexNumber", IndexNumber);
                 con.Open();
                 SqlDataReader dr = com.ExecuteReader();
                 while (dr.Read())
@@ -73,21 +193,23 @@ namespace ZAD2_WebApplication.DAL
                     student.LastName = dr["LastName"].ToString();
                     student.BirthDate = DateTime.ParseExact(dr["BirthDate"].ToString(), "dd.MM.yyyy hh:mm:ss", CultureInfo.InvariantCulture);
                     student.IDEnrollment = (int)dr["IdEnrollment"];
+                    student.Password = dr["Password"].ToString();
+                    student.Salt = dr["Salt"].ToString();
                     list.Add(student);
                 }
             }
             return list;
         }
 
-        public int DeleteStudent(string index)
+        public int DeleteStudent(string IndexNumber)
         {
             using (SqlConnection con = new SqlConnection(ConString))
             using (SqlCommand com = new SqlCommand())
             {
                 int retValue = 0;
                 com.Connection = con;
-                com.CommandText = "DELETE FROM s17975.dbo.Student WHERE s17975.dbo.Student.IndexNumber = '" + @index + "';";
-                com.Parameters.AddWithValue("IndexNumber", index);
+                com.CommandText = "DELETE FROM s17975.dbo.Student WHERE s17975.dbo.Student.IndexNumber = '" + @IndexNumber + "';";
+                com.Parameters.AddWithValue("IndexNumber", IndexNumber);
                 con.Open();
                 retValue = com.ExecuteNonQuery();
                 return retValue;
@@ -227,7 +349,6 @@ namespace ZAD2_WebApplication.DAL
             }
             return response;
         }
-
 
     }
 }

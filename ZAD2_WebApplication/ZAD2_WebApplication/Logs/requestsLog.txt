@@ -5,3 +5,472 @@ Content-Disposition: form-data; name="TestBody"
 form-data-body
 ----------------------------809205585176292226189480--
 
+[t] : 16.05.2020 17:53:49 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 16.05.2020 17:53:49 | [method] : GET | [path] : /favicon.ico | [querystring] :  | [bodyStr] : 
+[t] : 16.05.2020 17:54:13 | [method] : POST | [path] : /api/enrollments/promotions | [querystring] : ?Semester=1&Studies=IT_ZAO | [bodyStr] : 
+[t] : 29.05.2020 16:39:15 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 16:39:15 | [method] : GET | [path] : /favicon.ico | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 16:39:28 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : ----------------------------111663189034938660538129
+Content-Disposition: form-data; name="TestBody"
+
+form-data-body
+----------------------------111663189034938660538129--
+
+[t] : 29.05.2020 16:41:15 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 16:41:15 | [method] : GET | [path] : /favicon.ico | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 16:41:19 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : {
+	"IndexNumber: "aa",
+	"Password": "aa"
+}
+[t] : 29.05.2020 16:50:56 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 16:51:02 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : {
+	"IndexNumber: "aa",
+	"Password": "aa"
+}
+[t] : 29.05.2020 18:07:23 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 18:07:37 | [method] : GET | [path] : /api/students/s17975 | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 18:21:09 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 18:21:13 | [method] : GET | [path] : /api/students/ | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 18:29:43 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 18:29:48 | [method] : GET | [path] : /api/students/ | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 18:30:46 | [method] : POST | [path] : /api/enrollments/promotions | [querystring] : ?Semester=1&Studies=IT_ZAO | [bodyStr] : {
+	"IndexNumber: "aa",
+	"Password": "aa"
+}
+[t] : 29.05.2020 18:32:55 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 18:32:59 | [method] : POST | [path] : /api/enrollments/promotions | [querystring] : ?Semester=1&Studies=IT_ZAO | [bodyStr] : {
+	"IndexNumber: "aa",
+	"Password": "aa"
+}
+[t] : 29.05.2020 18:33:23 | [method] : POST | [path] : /api/enrollments/promotions | [querystring] : ?Semester=1&Studies=IT_ZAO | [bodyStr] : 
+[t] : 29.05.2020 18:35:40 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 18:35:45 | [method] : POST | [path] : /api/enrollments/promotions | [querystring] : ?Semester=1&Studies=IT_ZAO | [bodyStr] : 
+[t] : 29.05.2020 18:36:29 | [method] : POST | [path] : /api/enrollments/promotions | [querystring] : ?Semester=1&Studies=IT_ZAO | [bodyStr] : {
+	"IndexNumber: "aa",
+	"Password": "aa"
+}
+[t] : 29.05.2020 18:46:38 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 18:46:50 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 18:47:01 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 18:48:31 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 18:48:36 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 18:48:53 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : {
+	"IndexNumber: "aa",
+	"Password": "aa"
+}
+[t] : 29.05.2020 18:59:35 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 18:59:41 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : {
+	"IndexNumber: "aa",
+	"Password": "aa"
+}
+[t] : 29.05.2020 19:02:43 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 19:02:47 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : {
+	"IndexNumber: "aa",
+	"Password": "aa"
+}
+[t] : 29.05.2020 19:11:06 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 19:11:33 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : {
+	"IndexNumber: "aa",
+	"Password": "aa"
+}
+[t] : 29.05.2020 19:12:00 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : {
+	"IndexNumber: "aa",
+	"Password": "aa"
+}
+[t] : 29.05.2020 19:12:10 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : {
+	"IndexNumber: "aa",
+	"Password": "aa"
+}
+[t] : 29.05.2020 19:12:15 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : {
+	"IndexNumber: "aa",
+	"Password": "aa"
+}
+[t] : 29.05.2020 19:13:29 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : {
+	"IndexNumber: "aa",
+	"Password": "aa"
+}
+[t] : 29.05.2020 19:13:37 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : {
+	"IndexNumber: "aa",
+	"Password": "aa"
+}
+[t] : 29.05.2020 19:37:27 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 19:37:51 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : {
+	"IndexNumber: "aa",
+	"Password": "aa"
+}
+[t] : 29.05.2020 19:38:30 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 19:38:45 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : {
+	"IndexNumber: "aa",
+	"Password": "aa"
+}
+[t] : 29.05.2020 19:39:11 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : {
+	"IndexNumber: "Students",
+	"Password": "Students"
+}
+[t] : 29.05.2020 19:42:18 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 19:42:22 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : {
+	"IndexNumber: "Students",
+	"Password": "Students"
+}
+[t] : 29.05.2020 19:44:07 | [method] : POST | [path] : /api/students | [querystring] :  | [bodyStr] : {
+	"IndexNumber: "Students",
+	"Password": "Students"
+}
+[t] : 29.05.2020 19:44:42 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 19:44:48 | [method] : POST | [path] : /api/students | [querystring] :  | [bodyStr] : {
+	"IndexNumber: "Students",
+	"Password": "Students"
+}
+[t] : 29.05.2020 19:52:58 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 19:52:58 | [method] : GET | [path] : /favicon.ico | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 19:53:21 | [method] : POST | [path] : /api/enrollments/promotions | [querystring] : ?Semester=1&Studies=IT_ZAOo | [bodyStr] : 
+[t] : 29.05.2020 19:53:40 | [method] : POST | [path] : /api/enrollments/promotions | [querystring] : ?Semester=1&Studies=IT_ZAO | [bodyStr] : 
+[t] : 29.05.2020 19:53:43 | [method] : POST | [path] : /api/enrollments/promotions | [querystring] : ?Semester=1&Studies=IT_ZAO | [bodyStr] : 
+[t] : 29.05.2020 19:57:52 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 19:57:56 | [method] : POST | [path] : /api/enrollments | [querystring] : ?IndexNumber=s17978&FirstName=Marcin&LastName=Rudko&BirthDate=1987-07-18&Studies=IT_INT | [bodyStr] : 
+[t] : 29.05.2020 20:00:18 | [method] : POST | [path] : /api/enrollments/promotions | [querystring] : ?Semester=1&Studies=IT_ZAO | [bodyStr] : 
+[t] : 29.05.2020 20:02:13 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 20:02:17 | [method] : POST | [path] : /api/enrollments/promotions | [querystring] : ?Semester=1&Studies=IT_ZAO | [bodyStr] : 
+[t] : 29.05.2020 20:03:23 | [method] : POST | [path] : /api/enrollments/promotions | [querystring] : ?Semester=1&Studies=IT_ZAO | [bodyStr] : 
+[t] : 29.05.2020 20:03:28 | [method] : POST | [path] : /api/enrollments/promotions | [querystring] : ?Semester=1&Studies=IT_ZAO | [bodyStr] : 
+[t] : 29.05.2020 20:05:24 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 20:05:28 | [method] : POST | [path] : /api/enrollments/promotions | [querystring] : ?Semester=1&Studies=IT_ZAO | [bodyStr] : 
+[t] : 29.05.2020 20:07:49 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 20:07:53 | [method] : POST | [path] : /api/enrollments/promotions | [querystring] : ?Semester=1&Studies=IT_ZAO | [bodyStr] : 
+[t] : 29.05.2020 20:16:05 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 20:16:25 | [method] : GET | [path] : /api/students/ | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 20:16:33 | [method] : GET | [path] : /api/students/ | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 20:17:10 | [method] : GET | [path] : /api/students/ | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 20:17:19 | [method] : GET | [path] : /api/students/ | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 20:17:29 | [method] : GET | [path] : /api/students/ | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 20:17:53 | [method] : GET | [path] : /api/students/ | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 20:18:58 | [method] : GET | [path] : /api/students/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber: "Students",
+	"Password": "Students"
+}
+[t] : 29.05.2020 20:26:33 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 20:26:33 | [method] : GET | [path] : /favicon.ico | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 20:26:38 | [method] : GET | [path] : /api/students/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber: "Students",
+	"Password": "Students"
+}
+[t] : 29.05.2020 20:28:00 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 20:28:17 | [method] : GET | [path] : /api/students/s17975 | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 20:28:36 | [method] : GET | [path] : /api/students/s17975 | [querystring] :  | [bodyStr] : 
+[t] : 29.05.2020 20:28:55 | [method] : GET | [path] : /api/students/s17975 | [querystring] :  | [bodyStr] : {
+	"IndexNumber: "Students",
+	"Password": "Students"
+}
+[t] : 30.05.2020 14:08:29 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 30.05.2020 14:08:54 | [method] : GET | [path] : /api/students/ | [querystring] :  | [bodyStr] : 
+[t] : 30.05.2020 14:09:31 | [method] : GET | [path] : /api/students/ | [querystring] :  | [bodyStr] : 
+[t] : 30.05.2020 14:10:06 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 30.05.2020 14:10:06 | [method] : GET | [path] : /favicon.ico | [querystring] :  | [bodyStr] : 
+[t] : 30.05.2020 14:10:10 | [method] : GET | [path] : /api/students/ | [querystring] :  | [bodyStr] : 
+[t] : 30.05.2020 14:10:23 | [method] : GET | [path] : /api/students/ | [querystring] :  | [bodyStr] : 
+[t] : 30.05.2020 14:10:31 | [method] : GET | [path] : /api/students/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "Students",
+	"Password": "Students"
+}
+[t] : 30.05.2020 14:10:59 | [method] : GET | [path] : /api/students/authenticate | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "Students",
+	"Password": "Students"
+}
+[t] : 30.05.2020 14:11:11 | [method] : GET | [path] : /api/students/authenticate | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "Students",
+	"Password": "Students"
+}
+[t] : 30.05.2020 14:11:27 | [method] : GET | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "Students",
+	"Password": "Students"
+}
+[t] : 30.05.2020 14:11:32 | [method] : GET | [path] : /api/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "Students",
+	"Password": "Students"
+}
+[t] : 30.05.2020 14:12:15 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 30.05.2020 14:12:22 | [method] : POST | [path] : /api/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "Students",
+	"Password": "Students"
+}
+[t] : 30.05.2020 14:12:45 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "Students",
+	"Password": "Students"
+}
+[t] : 30.05.2020 19:46:12 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 30.05.2020 19:46:22 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "Students",
+	"Password": "Students"
+}
+[t] : 30.05.2020 19:46:29 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "Students",
+	"Password": "Students"
+}
+[t] : 30.05.2020 19:48:14 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 30.05.2020 19:48:22 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "Students",
+	"Password": "Students"
+}
+[t] : 30.05.2020 19:49:49 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "Students",
+	"Password": "Students"
+}
+[t] : 30.05.2020 20:11:30 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 30.05.2020 20:11:37 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "Students",
+	"Password": "Students"
+}
+[t] : 30.05.2020 20:11:42 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "Students",
+	"Password": "Students"
+}
+[t] : 30.05.2020 20:13:05 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 30.05.2020 20:13:14 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "Students",
+	"Password": "Students"
+}
+[t] : 31.05.2020 12:34:05 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 12:34:14 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s17975",
+	"Password": "myPassword"
+}
+[t] : 31.05.2020 14:00:06 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 14:00:12 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s17975",
+	"Password": "myPassword"
+}
+[t] : 31.05.2020 14:04:06 | [method] : GET | [path] : /api/students/s17975 | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s17975",
+	"Password": "myPassword"
+}
+[t] : 31.05.2020 14:04:38 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s17975",
+	"Password": "myPassword"
+}
+[t] : 31.05.2020 14:04:44 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 14:04:54 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 14:05:00 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 14:06:21 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 14:06:32 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s17975",
+	"Password": "myPassword"
+}
+[t] : 31.05.2020 14:07:13 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 15:23:10 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 15:23:20 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s17975",
+	"Password": "myPassword"
+}
+[t] : 31.05.2020 15:26:22 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 15:26:29 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s17975",
+	"Password": "myPassword"
+}
+[t] : 31.05.2020 15:29:22 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 15:29:25 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s17975",
+	"Password": "myPassword"
+}
+[t] : 31.05.2020 15:31:54 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 15:32:00 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s17975",
+	"Password": "myPassword"
+}
+[t] : 31.05.2020 15:34:01 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 15:34:04 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s17975",
+	"Password": "myPassword"
+}
+[t] : 31.05.2020 15:40:08 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 15:40:11 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s17975",
+	"Password": "myPassword"
+}
+[t] : 31.05.2020 15:49:16 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 15:49:25 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s17975",
+	"Password": "myPassword"
+}
+[t] : 31.05.2020 15:54:18 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 15:54:58 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s17975",
+	"Password": "myPassword"
+}
+[t] : 31.05.2020 16:01:20 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 16:01:27 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "17975",
+	"Password": "myPassword"
+}
+[t] : 31.05.2020 16:17:07 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 16:17:14 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s17975",
+	"Password": "myPassword"
+}
+[t] : 31.05.2020 17:19:04 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 17:19:08 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s17975",
+	"Password": "myPassword"
+}
+[t] : 31.05.2020 17:21:02 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 17:21:05 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s17975",
+	"Password": "myPassword"
+}
+[t] : 31.05.2020 17:25:11 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 17:25:16 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s17975",
+	"Password": "myPassword"
+}
+[t] : 31.05.2020 17:27:03 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 17:27:05 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s17975",
+	"Password": "myPassword"
+}
+[t] : 31.05.2020 19:55:09 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 19:55:11 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s17975",
+	"Password": "myPassword"
+}
+[t] : 31.05.2020 19:58:50 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 19:58:55 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s17975",
+	"Password": "myPassword"
+}
+[t] : 31.05.2020 20:55:32 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 20:55:36 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s17975",
+	"Password": "myPassword"
+}
+[t] : 31.05.2020 20:57:31 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 20:57:39 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s17975",
+	"Password": "myPassword"
+}
+[t] : 31.05.2020 21:38:15 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 21:38:20 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s17975",
+	"Password": "myPassword"
+}
+[t] : 31.05.2020 21:41:10 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 21:41:10 | [method] : GET | [path] : /favicon.ico | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 21:41:12 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s17975",
+	"Password": "myPassword"
+}
+[t] : 31.05.2020 21:43:38 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 21:43:40 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s17975",
+	"Password": "myPassword"
+}
+[t] : 31.05.2020 21:45:04 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 21:45:08 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s17975",
+	"Password": "myPassword"
+}
+[t] : 31.05.2020 21:48:13 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 21:48:14 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s17975",
+	"Password": "myPassword"
+}
+[t] : 31.05.2020 21:49:10 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 21:49:17 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s17975",
+	"Password": "myPassword"
+}
+[t] : 31.05.2020 21:50:23 | [method] : POST | [path] : /api/enrollments/promotions | [querystring] : ?Semester=1&Studies=IT_ZAO | [bodyStr] : 
+[t] : 31.05.2020 21:51:10 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s16844",
+	"Password": "myPassword3"
+}
+[t] : 31.05.2020 21:51:25 | [method] : POST | [path] : /api/enrollments/promotions | [querystring] : ?Semester=1&Studies=IT_ZAO | [bodyStr] : 
+[t] : 31.05.2020 21:51:49 | [method] : POST | [path] : /api/enrollments/promotions | [querystring] : ?Semester=1&Studies=IT_ZAO | [bodyStr] : {
+	"IndexNumber": "s16844",
+	"Password": "myPassword3"
+}
+[t] : 31.05.2020 21:57:10 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 21:57:31 | [method] : POST | [path] : /api/enrollments/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s16844",
+	"Password": "myPassword3"
+}
+[t] : 31.05.2020 21:58:03 | [method] : POST | [path] : /api/enrollments/promotions | [querystring] : ?Semester=1&Studies=IT_ZAO | [bodyStr] : {
+	"IndexNumber": "s16844",
+	"Password": "myPassword3"
+}
+[t] : 31.05.2020 21:58:45 | [method] : POST | [path] : /api/enrollments/promotions | [querystring] : ?Semester=1&Studies=IT_ZAO | [bodyStr] : {
+	"IndexNumber": "s16844",
+	"Password": "myPassword3"
+}
+[t] : 31.05.2020 22:00:29 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 22:00:33 | [method] : POST | [path] : /api/enrollments/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s16844",
+	"Password": "myPassword3"
+}
+[t] : 31.05.2020 22:00:54 | [method] : POST | [path] : /api/enrollments/promotions | [querystring] : ?Semester=1&Studies=IT_ZAO | [bodyStr] : {
+	"IndexNumber": "s16844",
+	"Password": "myPassword3"
+}
+[t] : 31.05.2020 22:03:14 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 22:03:29 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s16844",
+	"Password": "myPassword3"
+}
+[t] : 31.05.2020 22:04:01 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 22:04:25 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 22:05:00 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 22:05:08 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s16844",
+	"Password": "myPassword3"
+}
+[t] : 31.05.2020 22:05:27 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 22:05:54 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 22:06:07 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s17975",
+	"Password": "myPassword"
+}
+[t] : 31.05.2020 22:07:37 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 22:07:40 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s16844",
+	"Password": "myPassword3"
+}
+[t] : 31.05.2020 22:07:57 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s17975",
+	"Password": "myPassword"
+}
+[t] : 31.05.2020 22:10:49 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 22:10:53 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s16844",
+	"Password": "myPassword3"
+}
+[t] : 31.05.2020 22:11:09 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s17975",
+	"Password": "myPassword"
+}
+[t] : 31.05.2020 22:15:05 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 22:15:12 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s16844",
+	"Password": "myPassword3"
+}
+[t] : 31.05.2020 22:15:29 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s17975",
+	"Password": "myPassword"
+}
+[t] : 31.05.2020 22:15:40 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 22:16:22 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 22:16:37 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s17975",
+	"Password": "myPassword"
+}
+[t] : 31.05.2020 22:17:10 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 22:17:20 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s17975",
+	"Password": "myPassword"
+}
+[t] : 31.05.2020 22:19:07 | [method] : GET | [path] : /api/values | [querystring] :  | [bodyStr] : 
+[t] : 31.05.2020 22:19:18 | [method] : POST | [path] : /api/students/authenticate/ | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s17975",
+	"Password": "myPassword"
+}
+[t] : 31.05.2020 22:20:00 | [method] : GET | [path] : /api/students | [querystring] :  | [bodyStr] : {
+	"IndexNumber": "s17975",
+	"Password": "myPassword"
+}

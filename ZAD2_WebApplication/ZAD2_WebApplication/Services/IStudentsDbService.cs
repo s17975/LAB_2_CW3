@@ -8,7 +8,11 @@ namespace ZAD2_WebApplication.DAL
 {
     public interface IStudentsDbService
     {
-        string CheckIndexNumberInDB(string Index);
+        Response_StudentAuthentication AuthenticateStudent(Request_StudentAuthentication request);
+        Response_AuthorizationRoles GetAuthorization(string IndexNumber);
+        string GetRefreshTokenOwner(string token);
+        void SetRefreshToken(Guid token, string indexNumber);
+        string CheckIndexNumberInDB(string indexNumber);
         IEnumerable<Student> GetStudents();
         IEnumerable<Student> GetStudent(string indexNumber);
         int DeleteStudent(string indexNumber);

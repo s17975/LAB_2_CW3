@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -12,6 +15,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using ZAD2_WebApplication.Controllers;
 using ZAD2_WebApplication.DAL;
@@ -32,7 +36,26 @@ namespace ZAD2_WebApplication
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IStudentsDbService, SqlServerDbService>();
-            services.AddControllers();
+
+            // Dodanie autoryzacji używając JSON Web Token
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateLifetime = true,
+                        ValidIssuer = "GakkoDB",
+                        ValidAudience = "All",
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["SecretKey"]))
+                    };
+                });
+
+            services.AddControllers()
+                .AddXmlSerializerFormatters();
+
+            // Dodanie generatora dokumentacji - bliblioteka Swagger
             services.AddSwaggerGen(config =>
             {
                 config.SwaggerDoc("v1", new OpenApiInfo { Title = "My_C-Szarp_App", Version = "v1" });
@@ -65,12 +88,15 @@ namespace ZAD2_WebApplication
             app.UseMiddleware<LoggingMiddleware>();
 
             // Middleware weryfikujący numer indexu od autora przychodzącego żądania
-            app.UseMiddleware<ValidateStudentRequestPermission>();
+            //app.UseMiddleware<ValidateStudentRequestPermission>();
 
             // Middleware przyjmujący żądania przychodzące na API i kerujący je dalej do obsługi
             app.UseRouting();
 
-            // Middleware autoryzacji
+            // Middleware autentykacji - czy jesteś tym kim jesteś
+            app.UseAuthentication();
+
+            // Middleware autoryzacji - czy masz dostęp do określonych zasobów
             app.UseAuthorization();
 
             // Middleware kierujący żądanie już do właściwej obsługi
