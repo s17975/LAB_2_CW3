@@ -88,7 +88,7 @@ namespace ZAD2_WebApplication
             app.UseMiddleware<LoggingMiddleware>();
 
             // Middleware weryfikujący numer indexu od autora przychodzącego żądania
-            //app.UseMiddleware<ValidateStudentRequestPermission>();
+            app.UseMiddleware<ValidateStudentRequestPermission>();
 
             // Middleware przyjmujący żądania przychodzące na API i kerujący je dalej do obsługi
             app.UseRouting();
